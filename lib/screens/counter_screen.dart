@@ -29,38 +29,26 @@ class _CounterScreenState extends State<CounterScreen> {
           ],
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           FloatingActionButton(
             child: const Icon(Icons.exposure_plus_1_outlined),
-            onPressed: () {
-              counter++;
-              // print('Hola Mundo $counter');
-              setState(() {});
-            },
+            onPressed: () => setState(() => counter++),
           ),
           // const SizedBox(width: 20),
           FloatingActionButton(
             child: const Icon(Icons.exposure_zero_outlined),
-            onPressed: () {
-              counter = 0;
-              // print('Hola Mundo $counter');
-              setState(() {});
-            },
+            onPressed: () => setState(() => counter = 0),
           ),
           // const SizedBox(width: 20),
           FloatingActionButton(
             child: const Icon(Icons.exposure_minus_1_outlined),
-            onPressed: () {
-              counter--;
-              // print('Hola Mundo $counter');
-              setState(() {});
-            },
+            onPressed: () => setState(() => counter--),
           ),
         ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
