@@ -8,7 +8,7 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
-  int counter = 10;
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
     const fontSize30 = TextStyle(fontSize: 30);
@@ -29,13 +29,36 @@ class _CounterScreenState extends State<CounterScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          counter++;
-          // print('Hola Mundo $counter');
-          setState(() {});
-        },
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            child: const Icon(Icons.exposure_plus_1_outlined),
+            onPressed: () {
+              counter++;
+              // print('Hola Mundo $counter');
+              setState(() {});
+            },
+          ),
+          // const SizedBox(width: 20),
+          FloatingActionButton(
+            child: const Icon(Icons.exposure_zero_outlined),
+            onPressed: () {
+              counter = 0;
+              // print('Hola Mundo $counter');
+              setState(() {});
+            },
+          ),
+          // const SizedBox(width: 20),
+          FloatingActionButton(
+            child: const Icon(Icons.exposure_minus_1_outlined),
+            onPressed: () {
+              counter--;
+              // print('Hola Mundo $counter');
+              setState(() {});
+            },
+          ),
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
